@@ -1,0 +1,100 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.nalevo {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  margin: 75px 0;
+
+  @include media(950) {
+    justify-content: center;
+  }
+  @include media(400){
+    padding: 30px;
+  }
+  img {
+    @include media(1500) {
+      max-width: 850px;
+    }
+
+    @include media(1300) {
+      max-width: 700px;
+    }
+
+    @include media(1150) {
+      max-width: 600px;
+    }
+
+    @include media(1100) {
+      max-width: 500px;
+    }
+
+    @include media(950) {
+      display: none;
+    }
+  }
+
+  .ous {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+
+    p {
+      color: #000;
+      max-width: 370px;
+      font-size: 18px;
+      line-height: 150.682%;
+      letter-spacing: 0.18px;
+      @include media(350){
+        font-size: 16px;
+      }
+    }
+
+    a {
+      color: white;
+      font-size: 18px;
+      background-color: #000;
+      padding: 10px 40px;
+      border-radius: 25px;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.aboutinf {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 70px;
+  flex-wrap: wrap;
+  @include media(700){
+    gap: 30px;
+  }
+  @include media(600){
+    gap: 20px;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: start;
+    @include media(700){
+      gap: 25px;
+    }
+    @include media(600){
+      gap: 15px;
+    }
+    .cverx {
+      color: #000;
+      font-size: 18px;
+      line-height: 150.682%;
+      letter-spacing: 0.18px;
+      max-width: 600px;
+      @include media(600){
+        font-size: 15px;
+      }
+    }
+
+    a {
+      color: #FFF;
+      font-size: 16px;
+      border-radius: 32px;
+      background: #000;
+      box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+      padding: 10px 40px;
+      width: max-content;
+    }
+  }
+}
+
+.clients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+
+  .galki {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 600px;
+
+    .galka {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .wizs {
+        color: #000;
+        font-size: 18px;
+        max-width: 500px;
+        @include media(500){
+          font-size: 15px;
+          
+        }
+      }
+    }
+  }
+}
+
+.rev {
+  flex-direction: row-reverse;
+  margin-top: 70px;
+}
+.fifth{
+  @include media(750){
+    width: 650px;
+  }
+  @include media(700){
+    width: 600px;
+  }
+  @include media(650){
+    width: 600px;
+  }
+  @include media(600){
+    width: 550px;
+  }
+  @include media(550){
+    width: 500px;
+  }
+  @include media(500){
+    width: 450px;
+  }
+  @include media(450){
+    width: 400px;
+  }
+  @include media(400){
+    width: 350px;
+  }
+}

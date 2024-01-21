@@ -1,0 +1,143 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.urrod {
+  text-align: right;
+  color: var(--Gray-4, #BDBDBD);
+  font-size: 18px;
+  letter-spacing: -0.225px;
+  padding: 40px 30px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 100px 0;
+  @include media(1200){
+    flex-wrap: wrap;
+    padding: 80px;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: column;
+    max-height: 500px;
+  }
+  @include media(550){
+    max-height: 750px;
+    padding: 5px;
+    margin-top: 100px;
+  }
+  border-bottom: #BDBDBD solid 2px;
+   .calumn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .imji{
+      cursor: pointer;
+      @include media(550){
+        transform: translateX(170px) translateY(-150px);
+      }
+      @include media(450){
+        transform: translateX(130px) translateY(-150px);
+      }
+    }
+    .tuofthem {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      .vantoo {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        img {
+          max-width: 30px;
+        }
+
+        .tuvan {
+          color: #000;
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+        }
+      }
+    }
+
+    .ostal {
+      color: #000;
+      @include font();
+      font-size: 18px;
+      letter-spacing: 1.26px;
+      text-transform: uppercase;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .logoc {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+
+        .phone {
+          color: #000;
+          @include font();
+          font-size: 18px;
+          letter-spacing: 1.17px;
+          text-transform: uppercase;
+        }
+      }
+
+      .logcont {
+        color: #000;
+        @include font(700);
+        font-size: 22px;
+      }
+    }
+  }
+}
+.paj{
+  @include media(550){
+    display: none !important;
+  }
+}

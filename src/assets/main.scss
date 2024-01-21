@@ -1,0 +1,446 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  @include font();
+  font-weight: 400;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+}
+
+.container {
+  max-width: 1700px;
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+}
+
+:root {
+  --swiper-navigation-size: 25px !important;
+  --swiper-pagination-bullet-border-radius: none;
+  --swiper-pagination-bullet-width: 25px;
+
+  @include media(550) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+}
+
+.h2 {
+  color: #000;
+  @include font(700);
+  font-size: 40px;
+  letter-spacing: 1.8px;
+  margin: 100px 0;
+  text-align: center;
+
+  @include media(450) {
+    font-size: 30px;
+  }
+}
+
+.h4 {
+  color: #000;
+  @include font(700);
+  font-size: 40px;
+  letter-spacing: 1.8px;
+  text-align: center;
+
+  @include media(550) {
+    font-size: 30px;
+  }
+
+  @include media(450) {
+    font-size: 25px;
+  }
+}
+
+:root {
+  --tb: #ffffff40;
+  --tbh: #ffffff70;
+  --tran: all 0.5s ease 0.1s;
+}
+
+body * {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+.rating-stars {
+  width: 300px;
+  padding: 1vmin;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transform: rotateX(15deg) translateX(-8%);
+
+  input {
+    display: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+label {
+  width: 6vmin;
+  height: 6vmin;
+  cursor: pointer;
+  margin: 0.5vmin 1.5vmin;
+  transition: var(--tran);
+  transition-delay: 0s;
+  position: relative;
+}
+
+label:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "\2605";
+  z-index: 2;
+  font-size: 6vmin;
+  line-height: 11vmin;
+  color: #b1ddff;
+  text-align: center;
+  transform: translateY(0vmin);
+  transition: var(--tran);
+  text-shadow:
+    1px 1px 1px var(--tb),
+    -1px -1px 1px var(--tb),
+    -1px 0px 1px var(--tb),
+    1px 0px 1px var(--tb),
+    0vmin 0.1vmin 1px #1d8be1,
+    0vmin 0.1vmin 1px #1d8be1,
+    0vmin 0.2vmin 1px #1b81d1,
+    0vmin 0.2vmin 1px #1b81d1,
+    0vmin 0.3vmin 1px #1972b7,
+    0vmin 0.3vmin 1px #1972b7,
+    0vmin 0.4vmin 1px #1a76bd,
+    0vmin 0.4vmin 1px #1a76bd,
+    0vmin 0.5vmin 1px #196fb1,
+    0vmin 0.5vmin 1px #196fb1,
+    0vmin 0.6vmin 1px #1868a5,
+    0vmin 0.6vmin 1px #1868a5,
+    0vmin 0.7vmin 1px #155f97,
+    0vmin 0.7vmin 1px #155f97,
+    0vmin 0.8vmin 1px #125689,
+    0vmin 0.8vmin 1px #125689,
+    0vmin 0.9vmin 1px #104e7d,
+    0vmin 0.9vmin 1px #104e7d,
+    0vmin 1.0vmin 1px #104975,
+    0vmin 1.1vmin 1px #104975,
+    0vmin 1.1vmin 1px #0e4169,
+    0vmin 1.2vmin 1px #0e4169,
+    0vmin 1.2vmin 1px #0c395d,
+    0vmin 1.3vmin 1px #0c395d,
+    0vmin 1.3vmin 1px #0a3151,
+    0vmin 1.4vmin 1px #0a3151,
+    0vmin 1.4vmin 1px #092c49,
+    0vmin 1.5vmin 1px #092c49,
+    0vmin 1.5vmin 1px #072239,
+    0vmin 1.6vmin 1px #072239,
+    0vmin 1.6vmin 3px #00000020;
+  filter: drop-shadow(0px 5px 10px #008dff) drop-shadow(0px 5px 30px #008dff);
+}
+
+label:hover:before {
+  color: #e2f2ff;
+  filter: drop-shadow(0px 5px 15px #b1ddff) drop-shadow(0px 5px 30px #b1ddff);
+}
+
+
+
+
+/*** unchecked:before ***/
+input:checked+label~label:before,
+input:checked+label~label:hover:active:before {
+  transition: var(--tran);
+  color: #18242f;
+  transform: translateY(1.5vmin);
+  filter: none;
+  text-shadow:
+    1px 1px 1px var(--tbh),
+    -1px -1px 1px var(--tbh),
+    -1px 0px 1px var(--tbh),
+    1px 0px 1px var(--tbh),
+    0vmin 0.01vmin 1px #1d8be1,
+    0vmin 0.02vmin 1px #1d8be1,
+    0vmin 0.03vmin 1px #1b81d1,
+    0vmin 0.04vmin 1px #1b81d1,
+    0vmin 0.05vmin 1px #1972b7,
+    0vmin 0.06vmin 1px #1972b7,
+    0vmin 0.07vmin 1px #1a76bd,
+    0vmin 0.08vmin 1px #1a76bd,
+    0vmin 0.09vmin 1px #196fb1,
+    0vmin 0.10vmin 1px #196fb1,
+    0vmin 0.11vmin 1px #1868a5,
+    0vmin 0.12vmin 1px #1868a5,
+    0vmin 0.13vmin 1px #155f97,
+    0vmin 0.14vmin 1px #155f97,
+    0vmin 0.15vmin 1px #125689,
+    0vmin 0.16vmin 1px #125689,
+    0vmin 0.17vmin 1px #104e7d,
+    0vmin 0.18vmin 1px #104e7d,
+    0vmin 0.19vmin 1px #104975,
+    0vmin 0.20vmin 1px #104975,
+    0vmin 0.21vmin 1px #0e4169,
+    0vmin 0.22vmin 1px #0e4169,
+    0vmin 0.23vmin 1px #0c395d,
+    0vmin 0.24vmin 1px #0c395d,
+    0vmin 0.25vmin 1px #0a3151,
+    0vmin 0.26vmin 1px #0a3151,
+    0vmin 0.27vmin 1px #092c49,
+    0vmin 0.28vmin 1px #092c49,
+    0vmin 0.29vmin 1px #072239,
+    0vmin 0.3vmin 1px #072239,
+    0vmin 0.5vmin 3px #00000020;
+}
+
+
+
+/*** unchecked:hover:before ***/
+input:checked+label~label:hover:before,
+label~label:hover:active:before {
+  color: #2196F3;
+  transform: translateY(1vmin);
+  text-shadow:
+    1px 1px 1px var(--tbh),
+    -1px -1px 1px var(--tbh),
+    -1px 0px 1px var(--tbh),
+    1px 0px 1px var(--tbh),
+    0vmin 0.02vmin 1px #1d8be1,
+    0vmin 0.04vmin 1px #1d8be1,
+    0vmin 0.06vmin 1px #1b81d1,
+    0vmin 0.08vmin 1px #1b81d1,
+    0vmin 0.10vmin 1px #1972b7,
+    0vmin 0.12vmin 1px #1972b7,
+    0vmin 0.14vmin 1px #1a76bd,
+    0vmin 0.16vmin 1px #1a76bd,
+    0vmin 0.18vmin 1px #196fb1,
+    0vmin 0.20vmin 1px #196fb1,
+    0vmin 0.22vmin 1px #1868a5,
+    0vmin 0.24vmin 1px #1868a5,
+    0vmin 0.26vmin 1px #155f97,
+    0vmin 0.28vmin 1px #155f97,
+    0vmin 0.30vmin 1px #125689,
+    0vmin 0.32vmin 1px #125689,
+    0vmin 0.34vmin 1px #104e7d,
+    0vmin 0.36vmin 1px #104e7d,
+    0vmin 0.38vmin 1px #104975,
+    0vmin 0.40vmin 1px #104975,
+    0vmin 0.42vmin 1px #0e4169,
+    0vmin 0.44vmin 1px #0e4169,
+    0vmin 0.46vmin 1px #0c395d,
+    0vmin 0.48vmin 1px #0c395d,
+    0vmin 0.50vmin 1px #0a3151,
+    0vmin 0.52vmin 1px #0a3151,
+    0vmin 0.54vmin 1px #092c49,
+    0vmin 0.56vmin 1px #092c49,
+    0vmin 0.58vmin 1px #072239,
+    0vmin 0.60vmin 1px #072239,
+    0vmin 1vmin 3px #00000020;
+}
+
+
+label[for=rs1]:before {
+  transition-delay: 0.05s;
+}
+
+label[for=rs2]:before {
+  transition-delay: 0.1s;
+}
+
+label[for=rs3]:before {
+  transition-delay: 0.15s;
+}
+
+label[for=rs4]:before {
+  transition-delay: 0.2s;
+}
+
+label[for=rs5]:before {
+  transition-delay: 0.25s;
+}
+
+.loadd {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.he {
+  display: flex;
+  max-width: 500px;
+  color: #000;
+  @include font(700);
+  font-size: 34px;
+  letter-spacing: 1.53px;
+
+  @include media(1150) {
+    justify-content: center;
+  }
+
+  @include media(650) {
+    font-size: 25px;
+  }
+
+  @include media(350) {
+    font-size: 20px;
+  }
+}
+
+.technoblade-never-dies {
+  width: 700px;
+  background-color: #000;
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  justify-content: start;
+  padding: 50px;
+  margin: 60px 0;
+
+  @include media(800) {
+    display: none;
+  }
+
+  .diff {
+    width: 70px;
+    height: 60px;
+    background: rgba(1, 123, 101, 0.31);
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .bl {
+      color: #FFF;
+      font-size: 36px;
+      letter-spacing: 1.62px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #FFF;
+      font-size: 18px;
+      line-height: 150.682%;
+      letter-spacing: 0.18px;
+      max-width: 550px;
+    }
+  }
+}
+
+.axa {
+  margin-left: auto;
+  width: 750px;
+}
+
+.h2 {
+  @include media(400) {
+    font-size: 30px;
+  }
+}
+
+.technooo {
+  h3 {
+    color: #FFF;
+    font-size: 19px;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+
+    @include media(350) {
+      font-size: 17px;
+    }
+  }
+
+  p {
+    color: #BFBFBF;
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    max-width: 650px;
+  }
+
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  background-color: #000;
+
+  @include media(800) {
+    display: flex;
+  }
+}
+
+.blade {
+  @include media(800) {
+    display: none;
+  }
+
+  @include media(650) {
+    display: flex;
+  }
+}
+
+.us-enter-active,
+.us-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.us-enter-from,
+.us-leave-to {
+  opacity: 0;
+}

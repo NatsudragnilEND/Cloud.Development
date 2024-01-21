@@ -1,0 +1,27 @@
+{
+  "name": "development",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/node": "^20.10.3",
+    "@vueuse/head": "^2.0.0",
+    "pinia": "^2.1.7",
+    "sass": "^1.69.5",
+    "swiper": "^11.0.5",
+    "vue": "^3.3.8",
+    "vue-lazyload": "^3.0.0",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.5",
+    "vue-tsc": "^1.8.22"
+  }
+}

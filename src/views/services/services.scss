@@ -1,0 +1,492 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.mam {
+  @include media(1100) {
+    flex-direction: column-reverse !important;
+  }
+}
+
+.title {
+  display: flex;
+  max-width: 75%;
+  gap: 50px;
+  margin-top: 100px;
+
+  @include media(1100) {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  @include media(500) {
+    margin-top: 35px;
+  }
+
+  img {
+    @include media(1400) {
+      max-width: 400px;
+    }
+
+    @include media(1100) {
+      max-width: 100%;
+      width: 600px;
+    }
+
+    @include media(700) {
+      width: 500px;
+    }
+
+    @include media(550) {
+      width: 400px;
+    }
+
+    @include media(450) {
+      width: 350px;
+    }
+    @include media(400) {
+      width: 320px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .hdfa {
+      color: #000;
+      @include font(700);
+      font-size: 40px;
+      letter-spacing: 1.8px;
+      max-width: 650px;
+
+      @include media(650) {
+        font-size: 30px;
+        max-width: 500px;
+      }
+
+      @include media(550) {
+        font-size: 25px;
+        max-width: 400px;
+      }
+
+      @include media(450) {
+        font-size: 25px;
+        max-width: 350px;
+      }
+      @include media(400) {
+        font-size: 25px;
+        max-width: 320px;
+      }
+    }
+
+    a {
+      color: #FFF;
+      font-size: 16px;
+      font-style: normal;
+      letter-spacing: 0.24px;
+      border-radius: 32px;
+      background: #000;
+      box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+      padding: 10px 45px;
+    }
+
+    .imk {
+      max-width: 40px;
+    }
+
+    p {
+      max-width: 600px;
+      color: #000;
+      @include font();
+      font-size: 18px;
+      line-height: 150.682%;
+      letter-spacing: 0.18px;
+
+      @include media(1400) {
+        font-size: 15px;
+      }
+
+      @include media(700) {
+        max-width: 500px;
+        font-size: 13px;
+      }
+
+      @include media(550) {
+        max-width: 400px;
+        font-size: 13px;
+      }
+
+      @include media(450) {
+        max-width: 350px;
+        font-size: 13px;
+      }
+      @include media(400) {
+        max-width: 320px;
+        font-size: 13px;
+      }
+    }
+
+    justify-content: center;
+    align-items: start;
+  }
+
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  max-width: 85%;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 100px;
+
+  @include media(1700) {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 55px;
+    max-width: 330px;
+    gap: 40px;
+    justify-content: center;
+    border-radius: 27px;
+    background: #FFF;
+    box-shadow: 0px 3px 11px 0px rgba(152, 152, 152, 0.56);
+    position: relative;
+    text-align: left;
+    height: 500px;
+
+    .left {
+      position: absolute;
+      top: -2%;
+      right: -3%;
+    }
+
+    .desc {
+      color: #000;
+      @include font();
+      font-size: 14px;
+      line-height: 153.182%;
+      letter-spacing: -0.21px;
+    }
+
+    .top {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+    }
+
+    .uz {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: .35s;
+      cursor: pointer;
+
+      &:hover .more {
+        color: #29A28C;
+      }
+
+      &:hover .all {
+        color: #29A28C;
+      }
+
+      .more {
+        color: #000;
+        @include font();
+        font-size: 16px;
+        letter-spacing: 0.8px;
+        transition: .35s;
+      }
+
+      .hover {
+        display: none;
+        width: 40px !important;
+        animation: id .5s ease-in;
+      }
+
+      @keyframes id {
+        from {
+          opacity: 0.2;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .hhover {
+        width: 40px;
+        animation: id .5s ease-in-out;
+      }
+
+      &:hover .hover {
+        display: flex;
+      }
+
+      &:hover .hhover {
+        display: none;
+      }
+
+      .all {
+        font-size: 40px;
+        color: #5d5d5d;
+        font-weight: 200;
+        margin-bottom: 3%;
+        transition: .35s;
+        @include font();
+      }
+    }
+
+    h3 {
+      color: #000;
+      @include font();
+      font-size: 25px;
+      max-width: 250px;
+      line-height: 129.682%;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+  }
+}
+
+.mem {
+  align-items: center;
+}
+
+.punc {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+
+  &-content {
+    font-size: 22px;
+  }
+}
+
+.punct {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  h3 {
+    @include media(700) {
+      font-size: 28px;
+    }
+
+    @include media(550) {
+      font-size: 25px;
+    }
+
+    @include media(450) {
+      font-size: 22px;
+    }
+    @include media(400) {
+      font-size: 19px;
+    }
+
+    font-size: 36px;
+    letter-spacing: 1.62px;
+    text-transform: uppercase;
+    transition: .3s;
+
+    .rot {
+      img {
+        transform: rotate(180deg) translateY(5px);
+      }
+    }
+  }
+
+  cursor: pointer;
+
+  &:hover h3 {
+    color: #29A28C;
+  }
+
+  &:hover p {
+    background-color: #29A28C;
+    border: #29A28C 1px solid;
+    color: #FFF;
+  }
+
+  p {
+    @include media(700) {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+
+    font-size: 18px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #000 1px solid;
+    transition: .3s;
+  }
+}
+
+.sucha {
+  color: #FFF;
+  font-size: 25px;
+  border-radius: 32px;
+  background: #000;
+  box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+  padding: 10px 30px;
+}
+
+.uspex {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+}
+
+.shadows {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+
+  @include media(1350) {
+    flex-wrap: wrap;
+    gap: 35px;
+  }
+
+  .shadow {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    background: #FFF;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.25);
+    padding-bottom: 15px;
+    height: 550px;
+
+    .shimage {
+      width: 400px;
+      @include media(450){
+        width: 350px;
+      }
+      @include media(400){
+        width: 300px;
+      }
+    }
+
+    .proyz {
+      color: #000;
+      @include font(700);
+      max-width: 300px;
+      font-size: 23px;
+      letter-spacing: 0.575px;
+    }
+  }
+}
+
+.uz {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: .35s;
+  cursor: pointer;
+
+  &:hover .more {
+    color: #29A28C;
+  }
+
+  &:hover .all {
+    color: #29A28C;
+  }
+
+  .more {
+    color: #000;
+    @include font();
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    transition: .35s;
+  }
+
+  .hover {
+    display: none;
+    width: 40px !important;
+    animation: id .5s ease-in;
+  }
+
+  @keyframes id {
+    from {
+      opacity: 0.2;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .hhover {
+    width: 40px;
+    animation: id .5s ease-in-out;
+  }
+
+  &:hover .hover {
+    display: flex;
+  }
+
+  &:hover .hhover {
+    display: none;
+  }
+
+  .all {
+    font-size: 40px;
+    color: #5d5d5d;
+    font-weight: 200;
+    margin-bottom: 1%;
+    transition: .35s;
+    @include font();
+  }
+}

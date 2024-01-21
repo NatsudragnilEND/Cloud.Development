@@ -1,0 +1,400 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";;
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: end;
+  width: 85%;
+  margin-top: 70px;
+
+  @include media(1150) {
+    justify-content: center;
+  }
+}
+
+.flf {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  gap: 50px;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+  margin-bottom: 150px;
+
+  @include media(550) {
+    img {
+      width: 450px;
+    }
+  }
+
+  @include media(500) {
+    img {
+      width: 400px;
+    }
+  }
+
+  @include media(450) {
+    img {
+      width: 400px;
+    }
+  }
+
+  @include media(400) {
+    img {
+      width: 350px;
+    }
+  }
+
+  @include media(350) {
+    img {
+      width: 300px;
+    }
+  }
+}
+
+.fuel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+
+  @include media(600) {
+    gap: 20px;
+  }
+
+  a {
+    color: #FFF;
+    font-size: 16px;
+    border-radius: 32px;
+    background: #000;
+    box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 40px;
+    width: max-content;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include media(380) {
+      gap: 10px;
+    }
+
+    .li {
+      width: 25px;
+      height: 1px;
+      background-color: #29A28C;
+    }
+
+    .stilia {
+      color: #000;
+      font-size: 20px;
+      letter-spacing: 0.18px;
+      max-width: 600px;
+
+      @include media(600) {
+        font-size: 18px;
+      }
+
+      @include media(500) {
+        font-size: 17px;
+      }
+
+      @include media(400) {
+        font-size: 16px;
+      }
+    }
+  }
+
+}
+
+.swip {
+  width: max-content;
+
+  img {
+    width: 500px;
+  }
+}
+
+.lol {
+  display: none;
+
+  @include media(800) {
+    display: flex;
+  }
+
+  width: 100%;
+  height: 250px;
+
+}
+
+.hope {
+  height: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mas {
+  @include media(1550) {
+    display: none;
+  }
+}
+
+.flexd {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h5 {
+    color: #000;
+    font-size: 40px;
+    letter-spacing: 1.575px;
+
+    @include media(500) {
+      font-size: 30px;
+    }
+  }
+
+  p {
+    color: #000;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 0.4px;
+
+    @include media(500) {
+      font-size: 16px;
+    }
+  }
+}
+
+.main {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 40em;
+  transform: translateY(-45%) translateX(-50%);
+}
+
+.mas {
+  position: relative;
+}
+
+.polncon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  @include media(1650) {
+    display: none;
+  }
+}
+
+.firs {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  text-align: right;
+
+  p {
+    color: #000;
+    font-size: 36px;
+    text-transform: uppercase;
+    padding: 0 40px;
+  }
+}
+
+.sec {
+  text-align: left;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  img {
+    margin-top: 20px;
+  }
+}
+
+.ladno {
+  position: relative;
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding: 30px;
+  height: 330px;
+  margin-top: 20px;
+
+  img {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+  }
+
+  .li {
+    width: 30px;
+    height: 1px;
+    background-color: #29A28C;
+    margin-top: 10px;
+  }
+
+  h3 {
+    color: #FFF;
+    font-size: 20px;
+    line-height: 150.682%;
+    letter-spacing: 0.18px;
+    max-width: 550px;
+  }
+}
+
+.rotatEl{
+  transition: .3s;
+}
+
+ .rell {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  overflow-y: hidden;
+
+  h3 {
+    color: #000;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-left: 30px;
+  }
+
+  p {
+    padding: 50px;
+    color: #FFF;
+    font-size: 30px;
+    line-height: 150.682%;
+    letter-spacing: 0.18px;
+    background-color: #000;
+    width: 100%;
+    @include media(1000){
+      font-size: 27px;
+    }
+    @include media(700){
+      font-size: 25px;
+    }
+  }
+
+  .img {
+    position: absolute;
+    left: 10px;
+    z-index: 2;
+  }
+
+  @include media(1650) {
+    display: flex;
+  }
+
+  @include media(650) {
+    display: none;
+  }
+}
+
+.jss {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+
+  @include media(800) {
+    display: none;
+  }
+
+  padding-top: 70px;
+  padding-bottom: 40px;
+
+  .flexd {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h5 {
+      color: #000;
+      font-size: 50px;
+      letter-spacing: 1.575px;
+      @include font(500);
+
+      @include media(500) {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      color: #000;
+      text-align: center;
+      font-size: 36px;
+      letter-spacing: 0.4px;
+    }
+  }
+}
+
+.dodasi {
+  border-right: 1px solid #017B65;
+  padding-right: 50px;
+}
+
+.nl {
+  display: none;
+  
+  img {
+    width: 80%;
+    padding: 50px 0;
+    
+  }
+
+  @include media(1550) {
+    display: flex;
+  }
+}

@@ -1,0 +1,128 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.borya {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  justify-content: start;
+  background-color: black;
+  padding: 50px;
+  margin-left: auto;
+  max-width: 1100px;
+  margin-top: 70px;
+  gap: 30px;
+
+  .teks {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .borr {
+      color: #FFF;
+      max-width: 440px;
+      font-size: 36px;
+      letter-spacing: 1.62px;
+      text-transform: uppercase;
+
+      @include media(1300) {
+        font-size: 30px;
+      }
+
+      @include media(1000) {
+        font-size: 28px;
+      }
+
+      @include media(800) {
+        font-size: 25px;
+      }
+
+      @include media(400) {
+        font-size: 23px;
+      }
+    }
+
+    .borr2 {
+      color: #FFF;
+      @include font(500);
+      font-size: 23px;
+      max-width: 440px;
+      line-height: 96.182%;
+      letter-spacing: 0.92px;
+
+      @include media(1300) {
+        font-size: 22px;
+      }
+
+      @include media(1000) {
+        font-size: 21px;
+      }
+
+      @include media(800) {
+        font-size: 20px;
+      }
+
+      @include media(400) {
+        font-size: 18px;
+      }
+    }
+
+    .borr3 {
+      color: #FFF;
+      max-width: 700px;
+      font-size: 18px;
+      font-weight: 400;
+
+      @include media(1300) {
+        font-size: 17px;
+      }
+
+      @include media(1000) {
+        font-size: 16px;
+      }
+
+      @include media(800) {
+        font-size: 13px;
+      }
+
+      @include media(400) {
+        font-size: 10px;
+      }
+    }
+  }
+}

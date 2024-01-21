@@ -1,0 +1,371 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.arhiv {
+  width: 800px;
+  height: 600px;
+
+  @include media(1400) {
+    width: 100%;
+    height: 500px;
+    gap: 20px;
+  }
+}
+
+.arhip {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 600px;
+  background: rgba(2, 123, 102, 0.10);
+  backdrop-filter: blur(4px);
+  gap: 40px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  @include media(1400) {
+    width: 100%;
+    height: 500px;
+    gap: 20px;
+  }
+
+  p {
+    color: #515151;
+    text-align: center;
+    @include font();
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    max-width: 450px;
+
+    @include media(500) {
+      font-size: 15px !important;
+    }
+  }
+
+  .ava {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h4 {
+      color: #000;
+      @include font();
+      font-size: 18px;
+      letter-spacing: 0.45px;
+    }
+
+    p {
+      color: #000;
+      @include font(500);
+      font-size: 20px;
+      ;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.ips {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(244deg, #25BA9F 2.05%, #1B7F6D 52.81%, #157161 75.54%, #09463B 101.06%);
+  width: 1100px;
+  height: 600px;
+  align-items: center;
+  gap: 15px;
+
+  @include media(1400) {
+    width: 100%;
+    height: 500px;
+  }
+
+  .abc {
+    color: #FFF;
+    text-align: center;
+    @include font();
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include media(1400) {
+      font-size: 30px;
+    }
+
+    @include media(600) {
+      font-size: 25px;
+    }
+    @include media(400) {
+      font-size: 23px;
+    }
+  }
+
+  .name {
+    padding: 15px;
+    max-width: 600px;
+    width: 100%;
+    border-bottom: #ffffff solid 1px;
+    color: rgb(255, 255, 255);
+    @include font();
+    font-size: 25px;
+    letter-spacing: 0.45px;
+
+    @include media(1400) {
+      max-width: 450px;
+      font-size: 22px;
+      padding: 12px;
+    }
+
+    @include media(500) {
+      max-width: 350px;
+      font-size: 20px;
+      padding: 10px;
+    }
+    @include media(400) {
+      max-width: 300px;
+      font-size: 18px;
+      padding: 7px;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.46);
+      @include font();
+      font-size: 25px;
+      letter-spacing: 0.45px;
+
+      @include media(1400) {
+        font-size: 22px;
+      }
+
+      @include media(500) {
+        font-size: 20px;
+      }
+      @include media(00) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .namis {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    @include media(1400) {
+      gap: 20px;
+    }
+
+    .nami {
+      padding: 15px;
+      width: 275px;
+      border-bottom: #ffffff solid 1px;
+      color: rgb(255, 255, 255);
+      @include font();
+      font-size: 25px;
+      letter-spacing: 0.45px;
+
+      @include media(1400) {
+        max-width: 215px;
+        font-size: 22px;
+        padding: 12px;
+      }
+
+      @include media(500) {
+        max-width: 175px;
+        font-size: 20px;
+        padding: 10px;
+      }
+      @include media(400) {
+        max-width: 150px;
+        font-size: 17px;
+        padding: 17px;
+      }
+
+      &::placeholder {
+        @include media(1400) {
+          font-size: 22px;
+        }
+
+        @include media(500) {
+          font-size: 20px;
+        }
+        @include media(400) {
+          font-size: 17px;
+        }
+
+        color: rgba(255, 255, 255, 0.46);
+        @include font();
+        font-size: 25px;
+        letter-spacing: 0.45px;
+      }
+    }
+  }
+
+  .messagj {
+    padding: 15px;
+    max-width: 600px;
+    width: 100%;
+    border: #ffffff solid 1px;
+    color: rgb(255, 255, 255);
+    @include font();
+    font-size: 25px;
+    border-radius: 16px;
+    letter-spacing: 0.45px;
+    margin-top: 50px;
+    resize: none;
+
+    @include media(1400) {
+      max-width: 450px;
+    }
+
+    @include media(500) {
+      max-width: 350px;
+    }
+    @include media(400) {
+      max-width: 300px;
+      padding: 10px;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.46);
+      @include font();
+      font-size: 25px;
+      letter-spacing: 0.45px;
+    }
+  }
+}
+
+.class {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 600px;
+
+  .tg {
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    right: 60px;
+    border-radius: 10px;
+    border: #ffffff solid 1px;
+    padding: 5px;
+    transition: .3s;
+    cursor: pointer;
+
+    @include media(1400) {
+      right: 150px;
+    }
+    @include media(450) {
+      right: 100px;
+    }
+    @include media(350) {
+      right: 85px;
+    }
+
+    &:hover {
+      background-color: #046a58;
+    }
+  }
+
+  .tg2 {
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 10px;
+    border: #ffffff solid 1px;
+    padding: 5px;
+    cursor: pointer;
+    transition: .3s;
+
+    @include media(1400) {
+      right: 90px;
+    }
+    @include media(450) {
+      right: 50px;
+    }
+    @include media(350) {
+      right: 35px;
+    }
+
+    &:hover {
+      background-color: #046a58;
+    }
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  justify-content: center;
+  @include media(1400) {
+    flex-direction: column;
+  }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.notice {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  color: rgb(72, 10, 88);
+  padding: 10px 35px;
+  font-size: 20px;
+  background-color: lightblue;
+  z-index: 100;
+  border-radius: 15px 0 15px 15px;
+
+  @include media(700) {
+    padding: 5px 25px;
+    font-size: 18px;
+    top: 460px;
+  }
+}

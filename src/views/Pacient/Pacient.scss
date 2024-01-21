@@ -1,0 +1,233 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.starter {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 70px;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+
+  img {
+    max-width: 700px;
+
+    @include media(750) {
+      max-width: 650px;
+    }
+
+    @include media(700) {
+      max-width: 600px;
+    }
+
+    @include media(650) {
+      max-width: 550px;
+    }
+
+    @include media(600) {
+      max-width: 500px;
+    }
+
+    @include media(550) {
+      max-width: 450px;
+    }
+
+    @include media(450) {
+      max-width: 400px;
+    }
+
+    @include media(400) {
+      max-width: 350px;
+    }
+
+    @include media(350) {
+      max-width: 300px;
+    }
+
+    @include media(300) {
+      max-width: 270px;
+    }
+
+    @include media(270) {
+      max-width: 240px;
+    }
+
+    @include media(240) {
+      max-width: 210px;
+    }
+
+    @include media(210) {
+      max-width: 190px;
+    }
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include media(800) {
+    gap: 40px;
+  }
+
+  @include media(700) {
+    gap: 30px;
+  }
+
+  @include media(500) {
+    gap: 20px;
+  }
+
+  @include media(350) {
+    gap: 15px;
+  }
+
+  p {
+    color: #000;
+    max-width: 530px;
+    font-size: 18px;
+    line-height: 150.682%;
+    letter-spacing: 0.18px;
+
+    @include media(1300) {
+      font-size: 17px;
+    }
+
+    @include media(1000) {
+      font-size: 16px;
+    }
+
+    @include media(800) {
+      font-size: 13px;
+    }
+
+    @include media(400) {
+      font-size: 12px;
+    }
+  }
+
+  a {
+    color: #FFF;
+    font-size: 16px;
+    padding: 10px 40px;
+    border-radius: 32px;
+    background: #000;
+    box-shadow: 4px 4px 7px 0px rgba(0, 0, 0, 0.25);
+    width: max-content;
+  }
+}
+
+.technoblade-never-dies {
+  margin: 80px 0;
+}
+
+.choliki {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  gap: 50px;
+  margin: auto;
+
+  @include media(1300) {
+    overflow: scroll;
+  }
+}
+
+.h2 {
+  max-width: 700px;
+  margin: auto;
+}
+
+.lab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+  @include media(1050) {
+    flex-direction: column-reverse;
+  }
+
+  img {
+    @include media(1235) {
+      max-width: 500px;
+    }
+
+    @include media(1105) {
+      max-width: 450px;
+    }
+
+    @include media(500) {
+      display: none;
+    }
+  }
+
+  .border {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .borders {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    p {
+      color: #000;
+      font-size: 18px;
+      line-height: 150.682%;
+      letter-spacing: 0.18px;
+      max-width: 750px;
+    }
+
+    .line {
+      width: 30px;
+      height: 1px;
+      background-color: #29A28C;
+    }
+  }
+}
+
+.h2 {
+  margin-top: 70px;
+}

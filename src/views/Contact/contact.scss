@@ -1,0 +1,130 @@
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+$fontPath: "../../assets/fonts/";
+
+$fontWeightNormal: 400;
+$fontWeightBold: 700;
+$fontWeightMedium: 500;
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Regular.ttf") format("truetype");
+  font-weight: $fontWeightNormal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Bold.ttf") format("truetype");
+  font-weight: $fontWeightBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("#{$fontPath}OpenSans_Condensed-Medium.ttf") format("truetype");
+  font-weight: $fontWeightMedium;
+  font-style: normal;
+}
+
+@mixin font($weight: $fontWeightNormal) {
+  font-family: "font", sans-serif;
+  font-weight: $weight;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 70px;
+  @include media(850){
+    gap: 30px;
+  }
+}
+
+.calumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .imji {
+    cursor: pointer;
+
+    @include media(1200) {
+      display: none;
+    }
+  }
+}
+
+.ostal {
+  color: #000;
+  @include font();
+  font-size: 20px;
+  letter-spacing: 1.26px;
+  text-transform: uppercase;
+}
+
+.tuofthem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  .vantoo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      max-width: 30px;
+    }
+
+    .tuvan {
+      color: #000;
+      font-size: 17px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .logoc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    .phone {
+      color: #000;
+      @include font();
+      font-size: 20px;
+      letter-spacing: 1.17px;
+      text-transform: uppercase;
+    }
+  }
+
+  .logcont {
+    color: #000;
+    @include font(700);
+    font-size: 22px;
+  }
+}
+
+.engman {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  p{
+    font-size: 20px;
+  }
+}
